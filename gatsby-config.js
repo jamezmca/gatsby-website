@@ -8,10 +8,19 @@ module.exports = {
   /* Your site config here */
   /*localhost:8000/___graphql*/
   siteMetadata: {
-    title: 'Swagman Full-Stack Gatsby',
-    author: 'James McArthur'
+    title: 'Interweb James',
+    author: 'James McArthur',
+    head: 'james is cool'
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
+    },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
