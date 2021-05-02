@@ -1,0 +1,65 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-Index: 1000;
+    width: 90vw;
+    max-width: 900px;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 5px darkslateblue;
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: hsl(50, 20%, 95%);
+    }
+}
+
+@media (max-width: 700px) {
+    .modal {
+        flex-direction: column;
+    }
+}
+
+.about-me {
+    flex: 1;
+    background-color: hsl(50, 20%, 95%);
+    color: hsl(231, 58%, 16%);
+}
+
+.about-me-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h3 {
+        padding: 70px 30px;
+    }
+}
+
+.contact {
+    flex: 1;
+    background-color: hsl(230, 40%, 20%);
+    color: hsl(50, 20%, 95%);
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h3 {
+        padding: 70px 30px;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+.contact-content-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

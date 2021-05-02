@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import * as headerStyles from './header.module.scss'
+import Modal from './modal'
 
 
 const Header = () => {
+    const [isOpen, setIsOpen] = useState(false)
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -16,27 +18,13 @@ const Header = () => {
 
     return (
         <header className={headerStyles.header}>
+            <Modal open={isOpen} onClose={() => setIsOpen(false)}/>
             <h1>
                 <Link to="/" className={headerStyles.title}>
                     {data.site.siteMetadata.title}
                 </Link>
             </h1>
-            <nav>
-                <ul className={headerStyles.navList}>
-                    <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/blog">Blog</Link>
-                    </li>
-                    <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/contact">Contacts</Link>
-                    </li>
-                </ul>
-            </nav>
+            <button onClick={() => setIsOpen(true)}>Contact me</button>
         </header>
     )
 }

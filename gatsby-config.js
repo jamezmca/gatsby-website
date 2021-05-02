@@ -10,7 +10,7 @@ module.exports = {
   siteMetadata: {
     title: 'Interweb James',
     author: 'James McArthur',
-    head: 'james is cool'
+    head: 'james is cool',
   },
   plugins: [
     "gatsby-plugin-react-helmet",

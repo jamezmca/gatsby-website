@@ -201,7 +201,8 @@ html {
     box-sizing: inherit;
   }
   body {
-    color: hsla(0, 0%, 0%, 0.8);
+    color: hsla(0, 100%, 100%, 1);
+    background-color: hsl(249, 44%, 8%);
     font-family: sans-serif;
     font-weight: normal;
     word-wrap: break-word;

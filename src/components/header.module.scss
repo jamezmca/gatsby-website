@@ -1,12 +1,19 @@
 .header {
     padding: 1rem 0 3rem;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title {
-    color: #000000;
+    color: hsla(0, 100%, 100%, 1);
     font-size: 3rem;
     text-decoration: none;
+}
+
+.title:hover {
+    text-shadow: 0 0 2px white;
 }
 
 .nav-list {
@@ -29,4 +36,15 @@
 
 .active-nav-item {
     color: #333333
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+button:hover {
+    text-shadow: 0 0 2px white;
 }
