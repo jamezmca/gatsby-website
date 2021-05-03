@@ -1,29 +1,41 @@
 .modal {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-Index: 1000;
     width: 90vw;
     max-width: 900px;
-    height: 80%;
-    overflow: hidden;
+    min-height: 80%;
     display: flex;
     flex-direction: row;
     box-shadow: 0 0 5px darkslateblue;
+    
+}
 
-    button {
-        background-color: transparent;
-        border: none;
-        color: hsl(50, 20%, 95%);
-    }
+button {
+    background-color: transparent;
+    border: none;
+    color: hsl(50, 20%, 95%);
 }
 
 @media (max-width: 700px) {
     .modal {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        height: auto;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+        width: 100%;
+    }
+
+    .about-me,
+    .contact {
+        padding: 20px 10px;
     }
 }
+
+
 
 .about-me {
     flex: 1;
@@ -31,13 +43,12 @@
     color: hsl(231, 58%, 16%);
 }
 
-.about-me-content {
+.about-me-content,
+.contact-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    h3 {
-        padding: 70px 30px;
-    }
+    padding: 50px 10px;
 }
 
 .contact {
@@ -46,20 +57,64 @@
     color: hsl(50, 20%, 95%);
 }
 
-.contact-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    h3 {
-        padding: 70px 30px;
-    }
-    p {
-        font-size: 0.9rem;
-    }
-}
-
 .contact-content-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex: 1
 }
+
+
+h3 {
+    padding: 70px 30px 15px;
+}
+
+p {
+    padding: 0 30px;
+}
+
+.input {
+    margin-bottom: 20px;
+    position: relative;
+    margin: 10px;
+    input {
+        background-color: hsl(230, 40%, 20%);
+        color: white;
+    }
+    input, select, textarea {
+        color: white;
+        font-size: 14px;
+    }
+  }
+  
+  .input label {
+    font-size: 14px;
+    color: white;
+    display: block;
+  }
+  
+  .input input {
+    border: none;
+    border-bottom: 1px solid lightskyblue;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    height: 28px;
+  }
+  
+  .input-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 3px;
+    width: 0%;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .input input:focus ~ .input-indicator {
+    left: 0;
+    width: 100%;
+    background-color: lightskyblue;
+  }
+  
+  
