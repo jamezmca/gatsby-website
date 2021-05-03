@@ -1,5 +1,5 @@
 :root {
-    --clr-neon: #0ff0fc;
+    --clr-neon: #00fdff;
 }
 
 *,
@@ -84,4 +84,15 @@
 .neon-button:hover::after,
 .neon-button:focus::after {
   opacity: 1;
+}
+
+button:hover {
+    text-shadow: 0 0 2px white;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 20px;
 }

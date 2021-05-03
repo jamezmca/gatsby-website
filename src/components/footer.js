@@ -12,10 +12,11 @@ const Footer = () => {
             }
         }
     `)
+    //© 2021
 
     return (
         <footer className={footerStyles.footer}>
-            <p>Created by {data.site.siteMetadata.author}, © 2021</p>
+            <p>Created by {data.site.siteMetadata.author} :)</p>
         </footer>
     )
 }
