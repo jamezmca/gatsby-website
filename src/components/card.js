@@ -5,6 +5,12 @@ const Card = () => {
     return (
         <body>
             <div className={cardStyles.card}>
+                <div className={cardStyles.image}>
+                    <img 
+                    src="https://images.pexels.com/photos/1631678/pexels-photo-1631678.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" 
+                    alt="hi"
+                    className={cardStyles.cardImg}/>
+                </div>
                 <div className={cardStyles.cardContent}>
                     <h2 className={cardStyles.cardTitle}>Something awesome</h2>
                     <p className={cardStyles.cardBody}>lorem asdklasdklj aklajs dasas dasdfkljasdf a sd fasdfjaldsf  a sdf asdf </p>
