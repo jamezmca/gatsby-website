@@ -61,7 +61,7 @@ const Modal = ({ open, onClose }) => {
                             </div>
                             <div className={modalStyles.input}>
                                 <label for="message">Message</label>
-                                <textarea/>
+                                <textarea required id="message" name="message" rows="4"/>
                                 <div className={modalStyles.inputIndicator}></div>
                             </div>
                             <button type="submit">Send mensaje</button>
