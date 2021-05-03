@@ -70,7 +70,13 @@ const Modal = ({ open, onClose }) => {
                                     <div className={modalStyles.inputIndicator}></div>
                                 </label>
                             </div>
-                            <button type="submit">Send mensaje</button>
+                            <div className={modalStyles.center}>
+                                <div className={`${modalStyles.outer} ${modalStyles.button}`}>
+                                    <button type="submit" >Send mensaje</button>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

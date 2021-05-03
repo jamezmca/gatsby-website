@@ -10,13 +10,6 @@
     display: flex;
     flex-direction: row;
     box-shadow: 0 0 5px darkslateblue;
-    
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    color: hsl(50, 20%, 95%);
 }
 
 @media (max-width: 700px) {
@@ -34,8 +27,6 @@ button {
         padding: 20px 10px;
     }
 }
-
-
 
 .about-me {
     flex: 1;
@@ -71,7 +62,6 @@ textarea {
     outline: none;
     background-color: inherit;
 }
-
 
 h3 {
     padding: 70px 30px 15px;
@@ -123,4 +113,82 @@ p {
     left: 0;
     width: 100%;
     background-color: lightskyblue;
+  }
+
+  .center {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .outer {
+    position: relative;
+    margin: 0 50px;
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  }
+
+  .button {
+    height: 40px;
+    width: 180px;
+    border-radius: 20px;
+  }
+
+  .outer button, .outer span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+  }
+
+  .outer button {
+    background: #fff;
+    color: #000;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 9;
+  }
+
+  .button button {
+    height: 30px;
+    width: 170px;
+    border-radius: 20px;
+  }
+
+  .outer span {
+    height: 100%;
+    width: 100%;
+    background: inherit;
+  }
+  
+  .button span {
+    border-radius: 20px;
+  }
+
+  .outer:hover span:nth-child(1) {
+    filter: blur(7px)
+  }
+  
+  .outer:hover span:nth-child(2) {
+    filter: blur(14px)
+  }
+  
+  .outer:hover {
+    animation: rotate 1.5s linear infinite;
+  }
+
+  @keyframes rotate {
+    0%{
+      filter: hue-rotate(0deg)
+    }
+    100%{
+      filter: hue-rotate(360deg)
+    }
   }
