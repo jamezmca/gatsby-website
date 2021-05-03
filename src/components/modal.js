@@ -17,8 +17,6 @@ const Modal = ({ open, onClose }) => {
         <div>
             <div style={OVERLAY_STYLE} />
             <div className={modalStyles.modal}>
-                <div className={modalStyles.close}>
-                </div>
                 <div className={modalStyles.aboutMe}>
                     <div className={modalStyles.aboutMeContent}>
                         <h3>About me</h3>
