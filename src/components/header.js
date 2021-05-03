@@ -24,7 +24,7 @@ const Header = () => {
                     {data.site.siteMetadata.title}
                 </Link>
             </h1>
-            <button onClick={() => setIsOpen(true)}>Contact me</button>
+            <div onClick={() => setIsOpen(true)} className={headerStyles.neonButton}>Contact me</div>
         </header>
     )
 }
