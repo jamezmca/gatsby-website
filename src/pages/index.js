@@ -2,14 +2,13 @@ import React from "react"
 import { Link } from 'gatsby'
 import Layout from "../components/layout"
 import Head from "../components/head"
+import BlogPage from "./blog"
 
 const IndexPage = () => {
   return (
     <Layout>
       <Head title="Home"/>
-      <h1>Hello.</h1>
-      <h2>I am swagman</h2>
-      <p> Diggity      <Link to="/contact">sup dawg</Link></p>
+      <BlogPage/>
     </Layout>
   )
 

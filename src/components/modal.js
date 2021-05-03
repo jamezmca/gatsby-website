@@ -48,21 +48,24 @@ const Modal = ({ open, onClose }) => {
                             <h3>Contact</h3>
                             <button onClick={onClose}><p>close</p></button>
                         </div>
-                        <form onsubmit="alert('Success')">
+                        <form action="mailto:jamesmca@live.com" method="post" name="emailform">
                             <div className={modalStyles.input}>
-                                <label for="name">Name</label>
-                                <input type="text" required id="name" />
-                                <div className={modalStyles.inputIndicator}></div>
+                                <label for="name">Name
+                                    <input type="text" required id="name" />
+                                    <div className={modalStyles.inputIndicator}></div>
+                                </label>
                             </div>
                             <div className={modalStyles.input}>
-                                <label for="email-address">Email Address</label>
-                                <input type="email" required id="email-address" />
-                                <div className={modalStyles.inputIndicator}></div>
+                                <label for="email-address">Email Address
+                                    <input type="email" required id="email-address" />
+                                    <div className={modalStyles.inputIndicator}></div>
+                                </label>
                             </div>
                             <div className={modalStyles.input}>
-                                <label for="message">Message</label>
-                                <textarea required id="message" name="message" rows="4"/>
-                                <div className={modalStyles.inputIndicator}></div>
+                                <label for="message">Message
+                                    <textarea required id="message" name="message" rows="4" />
+                                    <div className={modalStyles.inputIndicator}></div>
+                                </label>
                             </div>
                             <button type="submit">Send mensaje</button>
                         </form>

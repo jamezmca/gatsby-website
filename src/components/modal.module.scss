@@ -66,6 +66,10 @@ button {
 
 textarea {
     width: 100%;
+    border: none;
+    border-bottom: 1px solid lightskyblue;
+    outline: none;
+    background-color: inherit;
 }
 
 
@@ -120,5 +124,3 @@ p {
     width: 100%;
     background-color: lightskyblue;
   }
-  
-  
