@@ -18,6 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
+        fullForceSync: true,
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
@@ -31,21 +32,8 @@ module.exports = {
       }
     },
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          'gatsby-remark-relative-images',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
-    }
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
   ],
 }
 

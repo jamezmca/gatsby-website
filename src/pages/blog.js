@@ -14,6 +14,14 @@ const BlogPage = () => {
                         slug
                         publishedDate(formatString:"MMMM Do, YYYY")
                         description
+                        titleImage {
+                            gatsbyImageData(
+                                placeholder: BLURRED,
+                                width: 500,
+                                cropFocus: CENTER,
+                                resizingBehavior: FILL
+                            )
+                        }
                     }
                 }
             }
@@ -27,10 +35,14 @@ const BlogPage = () => {
             <div className={blogStyles.posts}>
                 {data.allContentfulProjectPost.edges.map((edge) => {
                     return (
-                        <Card link={`/blog/${edge.node.slug}`} 
+                        <Card link={`/blog/${edge.node.slug}`}
                             title={edge.node.title}
                             date={edge.node.publishedDate}
-                            description={edge.node.description}/>
+                            description={edge.node.description} 
+                            key={edge.node.title}
+                            url={edge.node.titleImage?.gatsbyImageData}
+                            fileName={edge.node.title}
+                            />
                     )
                 })}
             </div>
