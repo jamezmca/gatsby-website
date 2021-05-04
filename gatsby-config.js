@@ -18,7 +18,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        fullForceSync: true,
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
