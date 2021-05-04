@@ -20,13 +20,6 @@ const BlogPage = () => {
         }
     `)
 
-    /* <li className={blogStyles.post}>
-                            <Link to={`/blog/${edge.node.slug}`}>
-                                <h2>{edge.node.title}</h2>
-                                <p>{edge.node.publishedDate}</p>
-                            </Link>
-                        </li> */
-
     return (
         <div>
             <p>"Yesterday is history, tomorrow is a mystery, and today is a gift - that is why they call it the present." - Master Oogway</p>

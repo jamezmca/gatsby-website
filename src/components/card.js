@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const Card = ({link, title, date, description}) => {
     return (
-        <Link>
+        <Link to={link}>
             <div className={cardStyles.card}>
                 <div className={cardStyles.image}>
                     <img
