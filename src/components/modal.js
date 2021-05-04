@@ -47,7 +47,7 @@ const Modal = ({ open, onClose }) => {
                     <div className={modalStyles.contactContent}>
                         <div className={modalStyles.contactContentHeader}>
                             <h3>Contact</h3>
-                            <button onClick={onClose}><p>close</p></button>
+                            <button onClick={onClose} className={modalStyles.buttonClose}><p>close</p></button>
                         </div>
                         <form action="mailto:jamesmca@live.com" method="post" name="emailform">
                             <div className={modalStyles.input}>

@@ -1,6 +1,10 @@
 .posts {
-    list-style-type: none;
+    display: flex;
+    flex-direction: row;
     margin: 0;
+    overflow-x: scroll;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .post {
