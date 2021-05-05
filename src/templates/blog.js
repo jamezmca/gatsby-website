@@ -13,11 +13,10 @@ export const query = graphql`
       body {
         raw
         references {
-          ... on ContentfulAsset {
+            ... on ContentfulAsset {
             contentful_id
             __typename
-            title
-            fixed(width: 1000) {
+            fixed(width: 1600) {
               width
               height
               src
@@ -29,17 +28,18 @@ export const query = graphql`
     }
   }
 `
+
 const Blog = (props) => {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        console.log(node)
-        
-        return //<img src={node.data.target.fixed?.src} alt="hello" />
+        //props.data.contentfulProjectPost.body.references.forEach(e => console.log(e.contentful_id))
+        //console.log(node.data.target.sys.id)
+        //console.log(node.data.target.sys.id, props.data.contentfulProjectPost.body.references.find(e => e.contentful_id === node.data.target.sys.id).fixed.src)
+        return <img src={props.data.contentfulProjectPost.body.references.find(e => e.contentful_id === node.data.target.sys.id).fixed.src} alt="howdy"/>
       }
     }
   }
-
   return (
     <Layout>
       <Head title={props.data.contentfulProjectPost.title} />
@@ -49,5 +49,6 @@ const Blog = (props) => {
     </Layout>
   )
 }
+
 
 export default Blog
