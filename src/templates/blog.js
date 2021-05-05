@@ -32,8 +32,9 @@ export const query = graphql`
 const Blog = (props) => {
   const options = {
     renderNode: {
-      "embedded-asset-block": (node) => {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
         console.log(node)
+        
         return //<img src={node.data.target.fixed?.src} alt="hello" />
       }
     }
