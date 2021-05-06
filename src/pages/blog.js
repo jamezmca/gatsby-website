@@ -17,7 +17,6 @@ const BlogPage = () => {
                         titleImage {
                             gatsbyImageData(
                                 placeholder: BLURRED,
-                                width: 500,
                                 cropFocus: CENTER,
                                 resizingBehavior: FILL
                             )

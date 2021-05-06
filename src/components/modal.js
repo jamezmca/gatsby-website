@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import emailjs from 'emailjs-com'
 import * as modalStyles from './modal.module.scss'
 
 const OVERLAY_STYLE = {
@@ -12,23 +13,18 @@ const OVERLAY_STYLE = {
 }
 
 const Modal = ({ open, onClose }) => {
-    const [formData, setFormData] = useState({})
 
-    const handleChange = (e) => {
-        setFormData({
-          ...formData,
-    
-          // Trimming any whitespace
-          [e.target.name]: e.target.value
+    function sendEmail(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('gmail', 'react-mailer', e.target, 'user_f2c8APICr5dYEDVNVecOV')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
         });
-      };
-    
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        alert("Message Sent :)")
-        console.log(formData)
-        event.target.reset()
-
+        
+        e.target.reset()
     }
 
     if (!open) return null
@@ -68,22 +64,22 @@ const Modal = ({ open, onClose }) => {
                             <h3>Contact</h3>
                             <button onClick={onClose} className={modalStyles.buttonClose}><p>close</p></button>
                         </div>
-                        <form onSubmit={handleFormSubmit} method="post" name="emailform" autocomplete="off">
+                        <form onSubmit={sendEmail} method="post" name="emailform" autoComplete="off">
                             <div className={modalStyles.input}>
-                                <label for="name">Name
-                                    <input type="text" required id="name" name="name" onChange={handleChange}/>
+                                <label htmlFor="name">Name
+                                    <input type="text" required id="name" name="name"/>
                                     <div className={modalStyles.inputIndicator}></div>
                                 </label>
                             </div>
                             <div className={modalStyles.input}>
-                                <label for="emailaddress">Email Address
-                                    <input type="email" required id="emailaddress" name="emailaddress" onChange={handleChange}/>
+                                <label htmlFor="emailaddress">Email Address
+                                    <input type="email" required id="emailaddress" name="emailaddress"/>
                                     <div className={modalStyles.inputIndicator}></div>
                                 </label>
                             </div>
                             <div className={modalStyles.input}>
-                                <label for="message">Message
-                                    <textarea required id="message" name="message" rows="4" onChange={handleChange}/>
+                                <label htmlFor="message">Message
+                                    <textarea required id="message" name="message" rows="4"/>
                                     <div className={modalStyles.inputIndicator}></div>
                                 </label>
                             </div>
