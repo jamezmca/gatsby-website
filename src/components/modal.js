@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as modalStyles from './modal.module.scss'
 
 const OVERLAY_STYLE = {
@@ -12,6 +12,25 @@ const OVERLAY_STYLE = {
 }
 
 const Modal = ({ open, onClose }) => {
+    const [formData, setFormData] = useState({})
+
+    const handleChange = (e) => {
+        setFormData({
+          ...formData,
+    
+          // Trimming any whitespace
+          [e.target.name]: e.target.value
+        });
+      };
+    
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        alert("Message Sent :)")
+        console.log(formData)
+        event.target.reset()
+
+    }
+
     if (!open) return null
     return (
         <div>
@@ -49,28 +68,28 @@ const Modal = ({ open, onClose }) => {
                             <h3>Contact</h3>
                             <button onClick={onClose} className={modalStyles.buttonClose}><p>close</p></button>
                         </div>
-                        <form action="mailto:jamesmca@live.com" method="post" name="emailform">
+                        <form onSubmit={handleFormSubmit} method="post" name="emailform" autocomplete="off">
                             <div className={modalStyles.input}>
                                 <label for="name">Name
-                                    <input type="text" required id="name" />
+                                    <input type="text" required id="name" name="name" onChange={handleChange}/>
                                     <div className={modalStyles.inputIndicator}></div>
                                 </label>
                             </div>
                             <div className={modalStyles.input}>
-                                <label for="email-address">Email Address
-                                    <input type="email" required id="email-address" />
+                                <label for="emailaddress">Email Address
+                                    <input type="email" required id="emailaddress" name="emailaddress" onChange={handleChange}/>
                                     <div className={modalStyles.inputIndicator}></div>
                                 </label>
                             </div>
                             <div className={modalStyles.input}>
                                 <label for="message">Message
-                                    <textarea required id="message" name="message" rows="4" />
+                                    <textarea required id="message" name="message" rows="4" onChange={handleChange}/>
                                     <div className={modalStyles.inputIndicator}></div>
                                 </label>
                             </div>
                             <div className={modalStyles.center}>
                                 <div className={`${modalStyles.outer} ${modalStyles.button}`}>
-                                    <button type="submit" >Send mensaje</button>
+                                    <button type="submit" value="Send Message">Send mensaje</button>
                                     <span></span>
                                     <span></span>
                                 </div>

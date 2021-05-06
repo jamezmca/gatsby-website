@@ -119,6 +119,13 @@ p {
     background-color: lightskyblue;
   }
 
+  .input textarea:focus ~ .input-indicator {
+    left: 0;
+    bottom: 9px;
+    width: 100%;
+    background-color: lightskyblue;
+  }
+
   .center {
     margin-top: 30px;
     display: flex;

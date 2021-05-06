@@ -3,8 +3,11 @@ const app = express()
 
 const PORT = process.env.PORT || 5000
 
+//Middleware
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
-    res.send('hello!')
+    res.sendFile(__dirname + './src/components/modal.js')
 })
 
 
