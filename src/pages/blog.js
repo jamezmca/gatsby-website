@@ -28,7 +28,7 @@ const BlogPage = () => {
     `)
 
     return (
-        <div>
+        <div className={blogStyles.blogContainer}>
             <p>"Yesterday is history, tomorrow is a mystery, and today is a gift - that is why they call it the present." - Master Oogway</p>
             <h1>Personal Projects</h1>
             <div className={blogStyles.posts}>
