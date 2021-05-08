@@ -13,7 +13,6 @@ module.exports = {
     head: 'james is cool',
   },
   plugins: [
-    `gatsby-plugin-fontawesome-css`,
     "gatsby-plugin-react-helmet",
     {
       resolve: 'gatsby-source-contentful',
