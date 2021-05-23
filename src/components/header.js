@@ -31,11 +31,24 @@ const Header = () => {
             </div>
             <Modal open={isOpen} onClose={() => setIsOpen(false)} />
 
-            <div onClick={() => setIsOpen(true)}
-                className={headerStyles.neonButton}
-                role="button"
-                tabIndex={0}
-                aria-hidden="true">Contact me</div>
+            <div className={headerStyles.neonButtonContainer}>
+                <a href="https://moongladeapparel.com/" target="_blank" rel="noreferrer">
+                    <div className={headerStyles.neonButtonTwo}
+                        role="button"
+                        tabIndex={0}
+                        aria-hidden="true">
+                        Moonglade Apparel
+                    </div>
+                </a>
+                <div onClick={() => setIsOpen(true)}
+                    className={headerStyles.neonButton}
+                    role="button"
+                    tabIndex={0}
+                    aria-hidden="true">
+                    Contact me
+                </div>
+            </div>
+
 
         </header>
     )
