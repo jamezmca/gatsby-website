@@ -32,6 +32,14 @@ const Header = () => {
             <Modal open={isOpen} onClose={() => setIsOpen(false)} />
 
             <div className={headerStyles.neonButtonContainer}>
+                <a href="https://galactiplanner.com/" target="_blank" rel="noreferrer">
+                    <div className={headerStyles.neonButtonThree}
+                        role="button"
+                        tabIndex={0}
+                        aria-hidden="true">
+                        Galactiplanner
+                    </div>
+                </a>
                 <a href="https://moongladeapparel.com/" target="_blank" rel="noreferrer">
                     <div className={headerStyles.neonButtonTwo}
                         role="button"

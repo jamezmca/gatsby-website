@@ -1,6 +1,7 @@
 :root {
     --clr-neon: #00fdff;
     --clr-orange: orange;
+    --clr-teal: rgb(166, 255, 0);
     --blade-hue: 160;
     --blade-lightness: 50%;
 }
@@ -255,6 +256,67 @@ text-shadow: white;
 opacity: 1;
 }
 
+.neon-button-three {
+  display: inline-block;
+  align-self: flex-start;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-teal);
+  border: var(--clr-teal) 0.125em solid;
+  margin-top: 12px;
+  margin-right: 20px;
+  padding: 0.2em 0.8em 0.15em;
+  border-radius: 0.25em;
+  
+  text-shadow: 0 0 0.2em hsl(0 0% 100% / 0.3), 0 0 0.5em currentColor; 
+  
+  box-shadow: inset 0 0 0.5em 0 var(--clr-teal), 0 0 0.5em 0 var(--clr-teal);
+  
+  position: relative;
+}
+
+.neon-button-three::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  background: var(--clr-teal);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-three::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  box-shadow: 0 0 2em 0.5em var(--clr-teal);
+  opacity: 0;
+  background-color: var(--clr-teal);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-three:hover,
+.neon-button-three:focus {
+color: white;
+text-shadow: white;
+}
+
+.neon-button-three:hover::before,
+.neon-button-three:focus::before,
+.neon-button-three:hover::after,
+.neon-button-three:focus::after {
+opacity: 1;
+}
+
 @media (max-width: 480px) {
   .header {
     flex-direction: column;
@@ -272,6 +334,11 @@ opacity: 1;
   }
 
   .neon-button-two {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .neon-button-three {
     width: 100%;
     margin-bottom: 10px;
   }

@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   /*localhost:8000/___graphql*/
   siteMetadata: {
-    title: 'Interweb James',
+    title: 'James McArthur',
     author: 'James McArthur',
     head: 'james is cool',
   },
