@@ -27,10 +27,18 @@ const BlogPage = () => {
         }
     `)
 
+    const skills = ['JavaScript', 'Algorithms', 'Data Structures', 'HTML', 'CSS', 'React', 'React Native', 'Express', 'NoSQL', 'Material UI', 'REST APIs', 'GraphQL', 'MongoDB', 'JQuery', 'Redux', 'SASS', 'React-Router', 'Heroku', 'E-commerce']
+
     return (
         <div className={blogStyles.blogContainer}>
             <p>"Yesterday is history, tomorrow is a mystery, and today is a gift - that is why they call it the present." - Master Oogway</p>
-            <h1>Personal Projects</h1>
+            <p>I am a Vancouver based web designer and front-end developer focused on creating clean & user-friendly experiences.</p>
+            <div className={blogStyles.skillsContainer}>
+                {skills.map(skill => (
+                    <div key={skill} className={blogStyles.skillBox}><p>{skill}</p></div>
+                ))}
+            </div>
+            <h1>Project Gallery</h1>
             <div className={blogStyles.posts}>
                 {data.allContentfulProjectPost.edges.map((edge) => {
                     return (

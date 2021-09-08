@@ -26,10 +26,15 @@
     color: hsla(0, 100%, 100%, 1);
     font-size: 3.5rem;
     text-decoration: none;
-}
+    text-shadow:
+    0.025em 0.025em 0 rgb(0, 255, 213),
+    0.05em 0.05em 0 rgb(154, 192, 18),
+    0.075em 0.075em 0 rgb(226, 143, 87),
+    0.1em 0.1em 0 rgb(161, 24, 127);
+  }
 
 .title:hover {
-    text-shadow: 0 0 2px white;
+    color: hsl(184, 86%, 61%);
 }
 
 .lightsaber {
