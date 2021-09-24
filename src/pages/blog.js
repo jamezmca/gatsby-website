@@ -31,8 +31,8 @@ const BlogPage = () => {
 
     return (
         <div className={blogStyles.blogContainer}>
+            <p><strong>I am a Vancouver based web designer and engineer focused on creating clean & user-friendly experiences.</strong></p>
             <p>"Yesterday is history, tomorrow is a mystery, and today is a gift - that is why they call it the present." - Master Oogway</p>
-            <p>I am a Vancouver based web designer and front-end developer focused on creating clean & user-friendly experiences.</p>
             <div className={blogStyles.skillsContainer}>
                 {skills.map(skill => (
                     <div key={skill} className={blogStyles.skillBox}><p>{skill}</p></div>
@@ -45,11 +45,11 @@ const BlogPage = () => {
                         <Card link={`/blog/${edge.node.slug}`}
                             title={edge.node.title}
                             date={edge.node.publishedDate}
-                            description={edge.node.description} 
+                            description={edge.node.description}
                             key={edge.node.title}
                             url={edge.node.titleImage?.gatsbyImageData}
                             fileName={edge.node.title}
-                            />
+                        />
                     )
                 })}
             </div>

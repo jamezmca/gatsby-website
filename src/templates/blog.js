@@ -5,6 +5,7 @@ import { BLOCKS } from '@contentful/rich-text-types'
 import { graphql } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import * as blogStyles from './blog.module.scss'
 
 export const query = graphql`
   query($slug: String!) {
@@ -33,14 +34,14 @@ const Blog = (props) => {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         let imgData = props.data.contentfulProjectPost.body.references.find(e => e.contentful_id === node.data.target.sys.id)?.fixed.src
-        console.log(imgData)
+        // console.log(imgData)
         if (imgData.search(".gif") !== -1) return <img src={imgData} alt="gif"/>
         const img = getImage(props.data.contentfulProjectPost.body.references.find(e => e.contentful_id === node.data.target.sys.id))
-        console.log(img)
+        // console.log(img)
         //props.data.contentfulProjectPost.body.references.forEach(e => console.log(e.contentful_id))
         //console.log(node.data.target.sys.id)
         //console.log(node.data.target.sys.id, props.data.contentfulProjectPost.body.references.find(e => e.contentful_id === node.data.target.sys.id).fixed.src)
-        return <GatsbyImage image={img} alt="howdy"/>
+        return <GatsbyImage image={img} alt="howdy" className={blogStyles.blogImages}/>
       }
     }
   }

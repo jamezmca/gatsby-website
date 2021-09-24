@@ -53,7 +53,7 @@ const Header = () => {
                     role="button"
                     tabIndex={0}
                     aria-hidden="true">
-                    Contact me
+                    Connect
                 </div>
             </div>
 
