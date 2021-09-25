@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import * as footerStyles from './footer.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
@@ -16,7 +18,11 @@ const Footer = () => {
 
     return (
         <footer className={footerStyles.footer}>
-            <p>Created by {data.site.siteMetadata.author} :)</p>
+            <a href="https://github.com/jamezmca" target="_blank">
+                <span>
+                    <FontAwesomeIcon icon={faGithub} className={footerStyles.icons}/>
+                </span>
+            </a>
         </footer>
     )
 }

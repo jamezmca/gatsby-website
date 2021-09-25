@@ -129,6 +129,13 @@
   flex-direction: row;
 }
 
+.neon-button,
+.neon-button-two,
+.neon-button-three {
+  text-align: center;
+}
+
+
 .neon-button {
     display: inline-block;
     align-self: flex-start;
