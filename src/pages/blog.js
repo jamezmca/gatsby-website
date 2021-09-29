@@ -27,7 +27,7 @@ const BlogPage = () => {
         }
     `)
 
-    const skills = ['JavaScript', 'Algorithms', 'Data Structures', 'HTML', 'CSS', 'React', 'React Native', 'Express', 'NoSQL', 'Material UI', 'REST APIs', 'GraphQL', 'MongoDB', 'JQuery', 'Redux', 'SASS', 'React-Router', 'Heroku', 'E-commerce']
+    const skills = ['JavaScript', 'Algorithms', 'Data Structures', 'HTML', 'CSS', 'React', 'React Native', 'Express', 'NoSQL', 'SQL', 'Material UI', 'REST APIs', 'GraphQL', 'MongoDB', 'Redux', 'SASS', 'React-Router', 'Heroku', 'E-commerce']
 
     return (
         <div className={blogStyles.blogContainer}>
